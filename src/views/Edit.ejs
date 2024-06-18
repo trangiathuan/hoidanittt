@@ -14,19 +14,6 @@
             margin: 0 auto;
             margin-top: 20px;
         }
-
-        .btn-add {
-            margin-top: 10px;
-            margin-left: 10px;
-        }
-
-        .table {
-            margin-left: 10px;
-        }
-
-        .id {
-            font-weight: 400;
-        }
     </style>
 </head>
 
@@ -54,46 +41,30 @@
         </div>
     </nav>
     <!-- Nav-End -->
-    <!-- List-Start -->
-    <div>
-        <a class="btn btn-primary btn-add" href="/create-user" role="button">Add user</a>
+    <!-- Form-Start -->
+    <div class="center">
+        <div>Update</div>
+        <form class="col-4 center" action="/updateUser/<%= User.id %>" method="POST">
+            <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label">Email</label>
+                <input type="text" class="form-control" name="email" value="<%= User.email %>">
+            </div>
+            <div class="mb-3">
+                <label for="formGroupExampleInput2" class="form-label">Name</label>
+                <input type="text" class="form-control" name="name" value="<%= User.name %>">
+            </div>
+            <div class="mb-3">
+                <label for="formGroupExampleInput2" class="form-label">Thành phố</label>
+                <input type="text" class="form-control" name="city" value="<%= User.city %>">
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary">ADD</button>
+            </div>
+
+        </form>
     </div>
-    <table class="table">
-        <thead>
-            <tr>
-                <div class="row-12">
-                    <th class="col-1">ID</th>
-                    <th class="col-3">Email</th>
-                    <th class="col-3">Name</th>
-                    <th class="col-3">City</th>
-                    <th class="col-2">Action</th>
-                </div>
-            </tr>
-        </thead>
-        <tbody>
-            <% listUser.forEach(function(User) { %>
-                <tr>
-                    <th class="id" scope="row">
-                        <%= User.id %>
-                    </th>
-                    <td>
-                        <%= User.email %>
-                    </td>
-                    <td>
-                        <%= User.name %>
-                    </td>
-                    <td>
-                        <%= User.city %>
-                    </td>
-                    <td>
-                        <a role="button" class="btn btn-danger" href="/update/<%= User.id %>">Edit</a>
-                        <button type="button" class="btn btn-warning">Delete</button>
-                    </td>
-                </tr>
-                <% }); %>
-        </tbody>
-    </table>
-    <!-- List-End -->
+
+    <!-- Form-End -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
