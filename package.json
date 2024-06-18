@@ -1,0 +1,26 @@
+{
+  "name": "full-backend-zero",
+  "version": "1.0.0",
+  "description": "Hoi dan IT fullstack backend zero ",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./src/server.js"
+  },
+  "keywords": [
+    "nodejs",
+    "reactjs"
+  ],
+  "author": "Gia Thuan",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "16.0.3",
+    "ejs": "^3.1.10",
+    "express": "4.18.2",
+    "mongoose": "^8.4.1",
+    "mysql2": "2.3.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
