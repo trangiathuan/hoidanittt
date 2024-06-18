@@ -1,3 +1,4 @@
+// Import 'dotenv' để sử dụng biến môi trường tại ENV
 require('dotenv').config()
 const mongoose = require('mongoose')
 
@@ -6,19 +7,19 @@ const mongoose = require('mongoose')
 const dbState = [
     {
         value: 0,
-        label: "disconnected"
+        label: "Disconnected"
     },
     {
         value: 1,
-        label: "connected"
+        label: "Connected"
     },
     {
         value: 2,
-        label: "connecting"
+        label: "Connecting"
     },
     {
         value: 3,
-        label: "disconnecting"
+        label: "Disconnecting"
     }
 ];
 //Kết nối MongoDB
