@@ -1,6 +1,17 @@
 const connection = require('../config/database')
 const User = require('../models/user')
 
+
+
+
+
+
+// Lấy danh sách user trong DB
+const getListUser = async (req, res) => {
+    // Lấy tất cả document trong User
+    let results = await User.find({})
+    return res.render('ListUser.ejs', { listUser: results })
+}
 // Chuyển hướng sang trang thêm user
 const getCreateUser = (req, res) => {
     return res.render('Home.ejs')
@@ -37,11 +48,20 @@ const postUpdateUser = async (req, res) => {
     return res.redirect('/')
 }
 
-// Lấy danh sách user trong DB
-const getListUser = async (req, res) => {
-    // Lấy tất cả document trong User
-    let results = await User.find({})
-    return res.render('ListUser.ejs', { listUser: results })
+
+
+const deleteUser = async (req, res) => {
+    let id = req.params.id;
+    let results = await User.findById({ _id: id })
+    return res.render('Delete.ejs', { User: results })
+
+}
+
+const deleteT = async (req, res) => {
+    let id = req.body.id;
+    console.log(">>>", id)
+    await User.deleteOne({ _id: id })
+    return res.redirect('/')
 }
 
 // Xuất các hàm để nơi khác có thể sử dụng
@@ -50,5 +70,7 @@ module.exports = {
     getListUser,
     postCreateUser,
     getUpdateUser,
-    postUpdateUser
+    postUpdateUser,
+    deleteUser,
+    deleteT
 }

@@ -7,6 +7,7 @@ const port = process.env.PORT || 8888 // init port
 const connection = require('./config/database')
 
 const webRoutes = require('./routes/web')
+const apiRoutes = require('./routes/api')
 
 confiViewEngine(app);
 
@@ -14,6 +15,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 //khai báo routes
 app.use(webRoutes)
+app.use('/v1/api', apiRoutes)
 //req (request), res(response) là 2 object trong môi trường Node.js
 
 
