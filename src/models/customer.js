@@ -10,6 +10,7 @@ const customerSchema = new mongoose.Schema({
     email: String,
     image: String,
     description: String,
+    descript: String
 },
     { timestamps: true }
 );
