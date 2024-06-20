@@ -42,7 +42,7 @@ const postUpdateUser = async (req, res) => {
     let email = req.body.email;
     let name = req.body.name;
     let city = req.body.city;
-    let id = req.params.id;
+    let id = req.body.id;
     // Câu lện update 1 đối tượng theo id của DB
     await User.updateOne({ _id: id }, { email: email, name: name, city: city })
     return res.redirect('/')
