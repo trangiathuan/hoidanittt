@@ -5,7 +5,11 @@ const app = express() // tạo express application
 const confiViewEngine = require('./config/viewEngine')
 const port = process.env.PORT || 8888 // init port
 const connection = require('./config/database')
+const fileUpload = require('express-fileupload');
 
+
+// default options
+app.use(fileUpload());
 const webRoutes = require('./routes/web')
 const apiRoutes = require('./routes/api')
 
