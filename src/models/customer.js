@@ -9,16 +9,10 @@ const customerSchema = new mongoose.Schema({
     phone: String,
     email: String,
     image: String,
-    description: String,
-    descript: String
+    description: String
 },
     { timestamps: true }
 );
-
-
-
-
-
 
 const Customer = mongoose.model('customer', customerSchema);
 
