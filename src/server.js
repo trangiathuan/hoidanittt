@@ -15,7 +15,6 @@ confiViewEngine(app);
 // Convert data to json
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
-
 //khai báo routes
 app.use(webRoutes)
 app.use('/v1/api', apiRoutes)

@@ -2,7 +2,6 @@
 require('dotenv').config()
 const mongoose = require('mongoose')
 
-
 // check kết nối mongoDB
 const dbState = [
     {
